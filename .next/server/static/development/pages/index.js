@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -115,20 +115,6 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 const contact = 'Tôi đam mê công nghệ, thích lập trình. ' + 'Hiện đang là developer cho playerDuo';
 /* harmony default export */ __webpack_exports__["default"] = (contact);
-
-/***/ }),
-
-/***/ "./config/index.js":
-/*!*************************!*\
-  !*** ./config/index.js ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-const config = {
-  authUrl: 'https://gateway.tuanndl.com/api/v1'
-};
-module.exports = config;
 
 /***/ }),
 
@@ -452,11 +438,7 @@ var _url = __webpack_require__(/*! url */ "url");
 
 var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
 
-var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "prop-types"));
-
 var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js"));
-
-var _rewriteUrlForExport = __webpack_require__(/*! ../next-server/lib/router/rewrite-url-for-export */ "./node_modules/next/dist/next-server/lib/router/rewrite-url-for-export.js");
 
 var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
 
@@ -490,6 +472,7 @@ function formatUrl(url) {
 var observer;
 var listeners = new _map.default();
 var IntersectionObserver = false ? undefined : null;
+var prefetched = {};
 
 function getObserver() {
   // Return shared instance of IntersectionObserver if already created
@@ -629,7 +612,7 @@ class Link extends _react.Component {
   }
 
   handleRef(ref) {
-    var isPrefetched = _router.default.router.pageLoader.prefetched[this.getHref()];
+    var isPrefetched = prefetched[this.getHref()];
 
     if (this.p && IntersectionObserver && ref && ref.tagName) {
       this.cleanUpListeners();
@@ -647,7 +630,11 @@ class Link extends _react.Component {
   prefetch() {
     if (!this.p || true) return; // Prefetch the JSON page if asked (only in the client)
 
-    _router.default.prefetch(this.getHref());
+    var href = this.getHref();
+
+    _router.default.prefetch(href);
+
+    prefetched[href] = true;
   }
 
   render() {
@@ -701,29 +688,30 @@ class Link extends _react.Component {
     // "<page>/index.html" directly.
 
 
-    if (false) {}
+    if (false) { var rewriteUrlForNextExport; }
 
     return _react.default.cloneElement(child, props);
   }
 
 }
 
-Link.propTypes = void 0;
-
 if (true) {
   var warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
 
-  var exact = __webpack_require__(/*! prop-types-exact */ "prop-types-exact");
+  var PropTypes = __webpack_require__(/*! prop-types */ "prop-types");
+
+  var exact = __webpack_require__(/*! prop-types-exact */ "prop-types-exact"); // @ts-ignore the property is supported, when declaring it on the class it outputs an extra bit of code which is not needed.
+
 
   Link.propTypes = exact({
-    href: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object]).isRequired,
-    as: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object]),
-    prefetch: _propTypes.default.bool,
-    replace: _propTypes.default.bool,
-    shallow: _propTypes.default.bool,
-    passHref: _propTypes.default.bool,
-    scroll: _propTypes.default.bool,
-    children: _propTypes.default.oneOfType([_propTypes.default.element, (props, propName) => {
+    href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    prefetch: PropTypes.bool,
+    replace: PropTypes.bool,
+    shallow: PropTypes.bool,
+    passHref: PropTypes.bool,
+    scroll: PropTypes.bool,
+    children: PropTypes.oneOfType([PropTypes.element, (props, propName) => {
       var value = props[propName];
 
       if (typeof value === 'string') {
@@ -1038,38 +1026,6 @@ exports.RouterContext = React.createContext(null);
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/next-server/lib/router/rewrite-url-for-export.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/router/rewrite-url-for-export.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function rewriteUrlForNextExport(url) {
-  const [pathname, hash] = url.split('#'); // tslint:disable-next-line
-
-  let [path, qs] = pathname.split('?');
-  path = path.replace(/\/$/, ''); // Append a trailing slash if this path does not have an extension
-
-  if (!/\.[^/]+\/?$/.test(path)) path += `/`;
-  if (qs) path += '?' + qs;
-  if (hash) path += '#' + hash;
-  return path;
-}
-
-exports.rewriteUrlForNextExport = rewriteUrlForNextExport;
-
-/***/ }),
-
 /***/ "./node_modules/next/dist/next-server/lib/router/router.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/next/dist/next-server/lib/router/router.js ***!
@@ -1101,8 +1057,6 @@ const url_1 = __webpack_require__(/*! url */ "url");
 const mitt_1 = __importDefault(__webpack_require__(/*! ../mitt */ "./node_modules/next/dist/next-server/lib/mitt.js"));
 
 const utils_1 = __webpack_require__(/*! ../utils */ "./node_modules/next/dist/next-server/lib/utils.js");
-
-const rewrite_url_for_export_1 = __webpack_require__(/*! ./rewrite-url-for-export */ "./node_modules/next/dist/next-server/lib/router/rewrite-url-for-export.js");
 
 const is_dynamic_1 = __webpack_require__(/*! ./utils/is-dynamic */ "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.js");
 
@@ -1243,7 +1197,9 @@ class Router {
 
 
   static _rewriteUrlForNextExport(url) {
-    return rewrite_url_for_export_1.rewriteUrlForNextExport(url);
+    if (false) {} else {
+      return url;
+    }
   }
 
   update(route, mod) {
@@ -1311,7 +1267,7 @@ class Router {
       } // marking route changes as a navigation start entry
 
 
-      if (utils_1.SUPPORTS_PERFORMANCE_USER_TIMING) {
+      if (utils_1.ST) {
         performance.mark('routeChange');
       } // If url and as provided as an object representation,
       // we'll format them into the string version here.
@@ -1479,7 +1435,7 @@ class Router {
         }
       }
 
-      return this._getData(() => Component.__NEXT_SPR ? this._getStaticData(as) : this.getInitialProps(Component, // we provide AppTree later so this needs to be `any`
+      return this._getData(() => Component.__N_SSG ? this._getStaticData(as) : this.getInitialProps(Component, // we provide AppTree later so this needs to be `any`
       {
         pathname,
         query,
@@ -1626,17 +1582,15 @@ class Router {
         }
 
         return;
+      } // Prefetch is not supported in development mode because it would trigger on-demand-entries
+
+
+      if (true) {
+        return;
       } // @ts-ignore pathname is always defined
 
 
-      const route = toRoute(pathname); // Prefetch is not supported in development mode because it would trigger on-demand-entries
-
-      if (true) {
-        // mark it as prefetched for debugging in dev
-        this.pageLoader.prefetched[route] = true;
-        return;
-      }
-
+      const route = toRoute(pathname);
       this.pageLoader.prefetch(route).then(resolve, reject);
     });
   }
@@ -1914,8 +1868,10 @@ function isResSent(res) {
 exports.isResSent = isResSent;
 
 async function loadGetInitialProps(App, ctx) {
+  var _a;
+
   if (true) {
-    if (App.prototype && App.prototype.getInitialProps) {
+    if ((_a = App.prototype) === null || _a === void 0 ? void 0 : _a.getInitialProps) {
       const message = `"${getDisplayName(App)}.getInitialProps()" is defined as an instance method - visit https://err.sh/zeit/next.js/get-initial-props-as-an-instance-method for more information.`;
       throw new Error(message);
     }
@@ -1973,8 +1929,8 @@ function formatWithValidation(url, options) {
 }
 
 exports.formatWithValidation = formatWithValidation;
-exports.SUPPORTS_PERFORMANCE = typeof performance !== 'undefined';
-exports.SUPPORTS_PERFORMANCE_USER_TIMING = exports.SUPPORTS_PERFORMANCE && typeof performance.mark === 'function' && typeof performance.measure === 'function';
+exports.SP = typeof performance !== 'undefined';
+exports.ST = exports.SP && typeof performance.mark === 'function' && typeof performance.measure === 'function';
 
 /***/ }),
 
@@ -2001,33 +1957,77 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config */ "./config/index.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_config__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils */ "./utils/index.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/pages/articles.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Articles = () => {
+const Article = ({
+  title,
+  createdAt,
+  category
+}) => {
   return __jsx("div", {
+    className: "Article__item",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
     },
     __self: undefined
-  }, "bai viet");
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: 'article',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "Article__item--title",
+    "aria-label": "open article",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, title)), __jsx("span", {
+    className: "Article__item--time",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, _utils__WEBPACK_IMPORTED_MODULE_1__["CommonHelper"].dateString(createdAt)), __jsx("span", {
+    className: "Article__item--tag",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, category && category.name));
 };
 
-Index.getInitialProps = async function () {
-  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default()(_config__WEBPACK_IMPORTED_MODULE_2___default.a.authUrl + '/article?limit=20&page=1');
-  const data = await res.json();
-  console.log(`Show data fetched. Count: ${data.length}`);
-  return {
-    shows: data.map(entry => entry.show)
-  };
+const Articles = ({
+  dataArticles
+}) => {
+  return dataArticles.map(item => {
+    return __jsx(Article, {
+      key: item._id,
+      title: item.title,
+      createdAt: item.createdAt,
+      content: item.content,
+      link: item.link,
+      category: item.category,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: undefined
+    });
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Articles);
@@ -2048,8 +2048,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar */ "./pages/sidebar.js");
 /* harmony import */ var _articles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./articles */ "./pages/articles.js");
 /* harmony import */ var _fonts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../fonts */ "./fonts/index.js");
-/* harmony import */ var _asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../asset/sass/app.scss */ "./asset/sass/app.scss");
-/* harmony import */ var _asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../asset/sass/app.scss */ "./asset/sass/app.scss");
+/* harmony import */ var _asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2059,29 +2061,48 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Index = () => {
+
+const Index = ({
+  dataArticles
+}) => {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     Object(_fonts__WEBPACK_IMPORTED_MODULE_3__["default"])();
   });
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: undefined
   }, __jsx(_sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
-  }), __jsx(_articles__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 17
     },
     __self: undefined
-  }));
+  }), __jsx("div", {
+    className: "container__main",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, __jsx(_articles__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    dataArticles: dataArticles,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  })));
+};
+
+Index.getInitialProps = async function () {
+  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default()('https://gateway.tuanndl.com/api/v1/article?limit=20&page=1');
+  const data = await res.json();
+  return {
+    dataArticles: data.result.data
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
@@ -2196,7 +2217,144 @@ const Sidebar = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ "./utils/CommonHelper.js":
+/*!*******************************!*\
+  !*** ./utils/CommonHelper.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CommonHelper; });
+class CommonHelper {
+  static clearLocalStorage() {
+    const {
+      lang,
+      idEduCategory
+    } = localStorage;
+    localStorage.clear();
+    sessionStorage.clear();
+    this.setAuthorizationToken(false);
+
+    if (lang) {
+      localStorage.setItem('lang', lang);
+    }
+
+    if (idEduCategory) {
+      localStorage.setItem('idEduCategory', idEduCategory);
+    }
+  }
+
+  static handleError(data) {
+    if (data.errors) {
+      const err = data.errors[0].code;
+
+      if (err === 'INVALID_TOKEN' || err === 'AUTHENTICATION_FAILED' || err === 'invalid signature' || err === 'TOKEN_EXPIRED') {
+        this.clearLocalStorage();
+        window.location.replace('/');
+      } else if (err === 'BLOCKED_USER') {
+        alert(`${data.errors[0].message}`);
+        this.clearLocalStorage();
+        window.location.replace('/');
+      } else {
+        return alert(data.errors[0].message);
+      }
+    }
+
+    return null;
+  }
+
+  static setAuthorizationToken(token) {
+    if (token) {
+      axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    } else {
+      delete axios.defaults.headers.common.Authorization;
+    }
+  }
+
+  static change_alias(alias) {
+    let str = alias;
+    str = str.toLowerCase();
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g, " ");
+    str = str.replace(/ + /g, " ");
+    str = str.trim();
+    return str;
+  }
+
+  static dateString(date, showTime) {
+    date = new Date(date);
+    const year = date.getUTCFullYear();
+    let month = date.getMonth();
+    let day = date.getDate();
+    month = this.helperDateString(month + 1);
+    day = this.helperDateString(day);
+    let dateString = `${day}-${month}-${year}`;
+
+    if (showTime) {
+      let hours = date.getHours();
+      let min = date.getMinutes();
+      dateString = `${hours}:${min} ` + dateString;
+    }
+
+    return dateString;
+  }
+
+  static helperDateString(number) {
+    if (number < 10) {
+      number = '0' + number.toString();
+    }
+
+    return number.toString();
+  }
+
+  static cutContent(content) {
+    const DEFAULT_LENGTH_CONTENT = 100;
+    let result = content;
+
+    if (content && content.length > DEFAULT_LENGTH_CONTENT) {
+      const indexCut = content.indexOf(' ', DEFAULT_LENGTH_CONTENT);
+
+      if (indexCut === -1) {
+        return result;
+      }
+
+      result = content.substring(0, indexCut);
+    }
+
+    return result;
+  }
+
+}
+;
+
+/***/ }),
+
+/***/ "./utils/index.js":
+/*!************************!*\
+  !*** ./utils/index.js ***!
+  \************************/
+/*! exports provided: CommonHelper */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CommonHelper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CommonHelper */ "./utils/CommonHelper.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CommonHelper", function() { return _CommonHelper__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+
+/***/ }),
+
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

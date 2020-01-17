@@ -474,7 +474,8 @@ exports.IS_BUNDLED_PAGE_REGEX = /^static[/\\][^/\\]+[/\\]pages.*\.js$/; // match
 
 exports.ROUTE_NAME_REGEX = /^static[/\\][^/\\]+[/\\]pages[/\\](.*)\.js$/;
 exports.SERVERLESS_ROUTE_NAME_REGEX = /^pages[/\\](.*)\.js$/;
-exports.DEFAULT_REDIRECT_STATUS = 307;
+exports.TEMPORARY_REDIRECT_STATUS = 307;
+exports.PERMANENT_REDIRECT_STATUS = 308;
 
 /***/ }),
 
@@ -581,8 +582,10 @@ function isResSent(res) {
 exports.isResSent = isResSent;
 
 async function loadGetInitialProps(App, ctx) {
+  var _a;
+
   if (true) {
-    if (App.prototype && App.prototype.getInitialProps) {
+    if ((_a = App.prototype) === null || _a === void 0 ? void 0 : _a.getInitialProps) {
       const message = `"${getDisplayName(App)}.getInitialProps()" is defined as an instance method - visit https://err.sh/zeit/next.js/get-initial-props-as-an-instance-method for more information.`;
       throw new Error(message);
     }
@@ -640,8 +643,8 @@ function formatWithValidation(url, options) {
 }
 
 exports.formatWithValidation = formatWithValidation;
-exports.SUPPORTS_PERFORMANCE = typeof performance !== 'undefined';
-exports.SUPPORTS_PERFORMANCE_USER_TIMING = exports.SUPPORTS_PERFORMANCE && typeof performance.mark === 'function' && typeof performance.measure === 'function';
+exports.SP = typeof performance !== 'undefined';
+exports.ST = exports.SP && typeof performance.mark === 'function' && typeof performance.measure === 'function';
 
 /***/ }),
 
@@ -792,8 +795,7 @@ class Document extends _react.Component {
 
       var {
         html,
-        head,
-        dataOnly
+        head
       } = yield ctx.renderPage({
         enhanceApp
       });
@@ -801,8 +803,7 @@ class Document extends _react.Component {
       return {
         html,
         head,
-        styles,
-        dataOnly
+        styles
       };
     })();
   }
@@ -1045,11 +1046,13 @@ class Head extends _react.Component {
 
     return _react.default.createElement("head", this.props, this.context._documentProps.isDevelopment && this.context._documentProps.hasCssMode && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("style", {
       "data-next-hide-fouc": true,
+      "data-ampdevmode": inAmpMode ? 'true' : undefined,
       dangerouslySetInnerHTML: {
         __html: "body{display:none}"
       }
     }), _react.default.createElement("noscript", {
-      "data-next-hide-fouc": true
+      "data-next-hide-fouc": true,
+      "data-ampdevmode": inAmpMode ? 'true' : undefined
     }, _react.default.createElement("style", {
       dangerouslySetInnerHTML: {
         __html: "body{display:block}"
@@ -1164,8 +1167,7 @@ class NextScript extends _react.Component {
 
       if (!/\.js$/.test(bundle.file) || files.includes(bundle.file)) return null;
       return _react.default.createElement("script", (0, _extends2.default)({
-        defer: false,
-        async: !false,
+        defer: true,
         key: bundle.file,
         src: assetPrefix + "/_next/" + encodeURI(bundle.file) + _devOnlyInvalidateCacheQueryString,
         nonce: this.props.nonce,
@@ -1198,8 +1200,7 @@ class NextScript extends _react.Component {
         key: file,
         src: assetPrefix + "/_next/" + encodeURI(file) + _devOnlyInvalidateCacheQueryString,
         nonce: this.props.nonce,
-        defer: false,
-        async: !false,
+        defer: true,
         crossOrigin: this.props.crossOrigin || undefined
       }, modernProps));
     });
@@ -1250,7 +1251,6 @@ class NextScript extends _react.Component {
       __NEXT_DATA__,
       bodyTags
     } = this.context._documentProps;
-    var deferScripts = false;
     var {
       _devOnlyInvalidateCacheQueryString
     } = this.context;
@@ -1287,8 +1287,7 @@ class NextScript extends _react.Component {
     }
 
     var pageScript = [_react.default.createElement("script", (0, _extends2.default)({
-      defer: deferScripts,
-      async: !deferScripts,
+      defer: true,
       "data-next-page": page,
       key: page,
       src: assetPrefix + encodeURI("/_next/static/" + buildId + "/pages" + getPageFile(page)) + _devOnlyInvalidateCacheQueryString,
@@ -1296,8 +1295,7 @@ class NextScript extends _react.Component {
       crossOrigin: this.props.crossOrigin || undefined
     },  false ? undefined : {})),  false && false];
     var appScript = [_react.default.createElement("script", (0, _extends2.default)({
-      defer: deferScripts,
-      async: !deferScripts,
+      defer: true,
       "data-next-page": "/_app",
       src: assetPrefix + ("/_next/static/" + buildId + "/pages/_app.js") + _devOnlyInvalidateCacheQueryString,
       key: "_app",
