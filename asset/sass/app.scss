@@ -1,0 +1,60 @@
+@import "article";
+@import "setting";
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'IBM Plex Serif', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #354052;
+  width: 100%;
+}
+
+p {
+  margin: 15px 0 3px 0;
+}
+
+::selection {
+  background: #fff5b8;
+  display: block
+}
+
+::-moz-selection {
+  background: #fff5b8;
+  display: block
+}
+
+.lazy-loading {
+  content: 'waitting';
+  color: red;
+}
+
+.container__main {
+  margin-left: 300px;
+  max-width: calc(100% - 300px);
+  padding: 10px 30px;
+  position: relative;
+}
+
+.menu--item {
+  font-size: 17px;
+  font-weight: bold;
+  margin-right: 15px;
+  cursor: pointer;
+  &:hover,&.active {
+    color: #f0564a;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .container__main{
+    width: calc(100% - 40px);
+    max-width: 100%;
+    height: auto;
+    position: unset;
+    padding: 10px 20px;
+    margin: 0 auto;
+  }
+}
