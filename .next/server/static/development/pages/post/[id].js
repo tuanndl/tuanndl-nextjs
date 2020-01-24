@@ -270,11 +270,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Comment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Comment */ "./components/Article/Comment/index.js");
 /* harmony import */ var _CreateComment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CreateComment */ "./components/Article/CreateComment/index.js");
 /* harmony import */ var _FacebookLogin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FacebookLogin */ "./components/Article/FacebookLogin/index.js");
-/* harmony import */ var react_spinkit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-spinkit */ "react-spinkit");
-/* harmony import */ var react_spinkit__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_spinkit__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/components/Article/Comments.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -293,7 +290,7 @@ const Comments = props => {
           createdAt: item.createdAt,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 14
+            lineNumber: 13
           },
           __self: undefined
         });
@@ -311,7 +308,7 @@ const Comments = props => {
         createCommentRequest: props.createCommentRequest,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 27
         },
         __self: undefined
       });
@@ -321,7 +318,7 @@ const Comments = props => {
       loginByFacebookRequest: props.loginByFacebookRequest,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 33
       },
       __self: undefined
     });
@@ -330,35 +327,34 @@ const Comments = props => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 39
     },
     __self: undefined
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: undefined
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 41
     },
     __self: undefined
   }, "B\xECnh lu\u1EADn")), __jsx("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 44
     },
     __self: undefined
-  }, elmComments(props.comment), props.isLoadingAuth && __jsx(react_spinkit__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    name: "ball-spin-fade-loader",
+  }, elmComments(props.comment), props.isLoadingAuth && __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: undefined
-  }), !props.isLoadingAuth && createComment()));
+  }, "Loading"), !props.isLoadingAuth && createComment()));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Comments);
@@ -426,7 +422,7 @@ const Content = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Common_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Common/Button */ "./components/Common/Button/index.js");
+/* harmony import */ var _components_Common_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Common/Button */ "./components/Common/Button/index.js");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.scss */ "./components/Article/CreateComment/index.scss");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/components/Article/CreateComment/index.js";
@@ -494,7 +490,7 @@ const CreateComment = props => {
       lineNumber: 28
     },
     __self: undefined
-  }), __jsx(_components_Common_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), __jsx(_components_Common_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     style: {
       marginLeft: 0,
       marginTop: 0
@@ -539,7 +535,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-facebook-login/dist/facebook-login-render-props */ "react-facebook-login/dist/facebook-login-render-props");
 /* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _config_credentials__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../config/credentials */ "./config/credentials.js");
-/* harmony import */ var _components_Common_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Common/Button */ "./components/Common/Button/index.js");
+/* harmony import */ var _components_Common_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Common/Button */ "./components/Common/Button/index.js");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index.scss */ "./components/Article/FacebookLogin/index.scss");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/components/Article/FacebookLogin/index.js";
@@ -568,7 +564,7 @@ const LoginFB = props => {
     fields: "name,email,picture",
     disableMobileRedirect: true,
     isMobile: true,
-    render: renderProps => __jsx(_components_Common_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    render: renderProps => __jsx(_components_Common_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
       onClick: renderProps.onClick,
       content: "\u0110\u0103ng nh\u1EADp \u0111\u1EC3 b\xECnh lu\u1EADn",
       className: "btn-success",
@@ -2711,6 +2707,18 @@ const Post = ({
       lineNumber: 25
     },
     __self: undefined
+  }), __jsx(_components_Article_Comments__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    idArticle: _id,
+    comment: dataComment,
+    dataAuth: {},
+    isLoadingAuth: true,
+    createCommentRequest: null,
+    loginByFacebookRequest: null,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
   }));
 };
 
@@ -3197,17 +3205,6 @@ module.exports = require("react-markdown");
 /***/ (function(module, exports) {
 
 module.exports = require("react-markdown/plugins/html-parser");
-
-/***/ }),
-
-/***/ "react-spinkit":
-/*!********************************!*\
-  !*** external "react-spinkit" ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-spinkit");
 
 /***/ }),
 

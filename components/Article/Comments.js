@@ -2,7 +2,6 @@ import React from 'react';
 import Comment from './Comment';
 import CreateComment from './CreateComment';
 import FacebookLogin from './FacebookLogin';
-import Spinner from 'react-spinkit';
 
 const Comments = props => {
 
@@ -45,7 +44,7 @@ const Comments = props => {
       <ul>
         {elmComments(props.comment)}
 
-        { props.isLoadingAuth && <Spinner name='ball-spin-fade-loader'/> }
+        { props.isLoadingAuth && <div>Loading</div> }
 
         { !props.isLoadingAuth && createComment()}
       </ul>

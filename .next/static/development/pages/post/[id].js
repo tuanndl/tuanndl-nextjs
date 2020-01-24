@@ -177,11 +177,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Comment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Comment */ "./components/Article/Comment/index.js");
 /* harmony import */ var _CreateComment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CreateComment */ "./components/Article/CreateComment/index.js");
 /* harmony import */ var _FacebookLogin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FacebookLogin */ "./components/Article/FacebookLogin/index.js");
-/* harmony import */ var react_spinkit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-spinkit */ "./node_modules/react-spinkit/dist/index.js");
-/* harmony import */ var react_spinkit__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_spinkit__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/components/Article/Comments.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -200,7 +197,7 @@ var Comments = function Comments(props) {
           createdAt: item.createdAt,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 14
+            lineNumber: 13
           },
           __self: this
         });
@@ -218,7 +215,7 @@ var Comments = function Comments(props) {
         createCommentRequest: props.createCommentRequest,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 27
         },
         __self: this
       });
@@ -228,7 +225,7 @@ var Comments = function Comments(props) {
       loginByFacebookRequest: props.loginByFacebookRequest,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 33
       },
       __self: this
     });
@@ -237,35 +234,34 @@ var Comments = function Comments(props) {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 39
     },
     __self: this
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 41
     },
     __self: this
   }, "B\xECnh lu\u1EADn")), __jsx("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 44
     },
     __self: this
-  }, elmComments(props.comment), props.isLoadingAuth && __jsx(react_spinkit__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    name: "ball-spin-fade-loader",
+  }, elmComments(props.comment), props.isLoadingAuth && __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: this
-  }), !props.isLoadingAuth && createComment()));
+  }, "Loading"), !props.isLoadingAuth && createComment()));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Comments);
@@ -334,7 +330,7 @@ var Content = function Content(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Common_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Common/Button */ "./components/Common/Button/index.js");
+/* harmony import */ var _components_Common_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Common/Button */ "./components/Common/Button/index.js");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.scss */ "./components/Article/CreateComment/index.scss");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/components/Article/CreateComment/index.js";
@@ -399,7 +395,7 @@ var CreateComment = function CreateComment(props) {
       lineNumber: 28
     },
     __self: this
-  }), __jsx(_components_Common_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), __jsx(_components_Common_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     style: {
       marginLeft: 0,
       marginTop: 0
@@ -433,7 +429,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-facebook-login/dist/facebook-login-render-props */ "./node_modules/react-facebook-login/dist/facebook-login-render-props.js");
 /* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _config_credentials__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../config/credentials */ "./config/credentials.js");
-/* harmony import */ var _components_Common_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/Common/Button */ "./components/Common/Button/index.js");
+/* harmony import */ var _components_Common_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Common/Button */ "./components/Common/Button/index.js");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index.scss */ "./components/Article/FacebookLogin/index.scss");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/components/Article/FacebookLogin/index.js";
@@ -463,7 +459,7 @@ var LoginFB = function LoginFB(props) {
     disableMobileRedirect: true,
     isMobile: true,
     render: function render(renderProps) {
-      return __jsx(_components_Common_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      return __jsx(_components_Common_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
         onClick: renderProps.onClick,
         content: "\u0110\u0103ng nh\u1EADp \u0111\u1EC3 b\xECnh lu\u1EADn",
         className: "btn-success",
@@ -2021,68 +2017,6 @@ module.exports = JSON.parse("{\"AElig\":\"Æ\",\"AMP\":\"&\",\"Aacute\":\"Á\",\
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"0\":\"�\",\"128\":\"€\",\"130\":\"‚\",\"131\":\"ƒ\",\"132\":\"„\",\"133\":\"…\",\"134\":\"†\",\"135\":\"‡\",\"136\":\"ˆ\",\"137\":\"‰\",\"138\":\"Š\",\"139\":\"‹\",\"140\":\"Œ\",\"142\":\"Ž\",\"145\":\"‘\",\"146\":\"’\",\"147\":\"“\",\"148\":\"”\",\"149\":\"•\",\"150\":\"–\",\"151\":\"—\",\"152\":\"˜\",\"153\":\"™\",\"154\":\"š\",\"155\":\"›\",\"156\":\"œ\",\"158\":\"ž\",\"159\":\"Ÿ\"}");
-
-/***/ }),
-
-/***/ "./node_modules/classnames/index.js":
-/*!******************************************!*\
-  !*** ./node_modules/classnames/index.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-  Copyright (c) 2017 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-	'use strict';
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames () {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg) && arg.length) {
-				var inner = classNames.apply(null, arg);
-				if (inner) {
-					classes.push(inner);
-				}
-			} else if (argType === 'object') {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if ( true && module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else if (true) {
-		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-			return classNames;
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}());
-
 
 /***/ }),
 
@@ -52592,206 +52526,6 @@ module.exports = __webpack_require__(/*! ../lib/plugins/html-parser */ "./node_m
 
 /***/ }),
 
-/***/ "./node_modules/react-spinkit/dist/index.js":
-/*!**************************************************!*\
-  !*** ./node_modules/react-spinkit/dist/index.js ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _objectAssign = __webpack_require__(/*! object-assign */ "./node_modules/next/dist/build/polyfills/object-assign.js");
-
-var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-var _spinners = __webpack_require__(/*! ./spinners */ "./node_modules/react-spinkit/dist/spinners.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // eslint-disable-line import/no-extraneous-dependencies
-
-
-if (!process.env.REACT_SPINKIT_NO_STYLES) {
-  /* eslint-disable global-require */
-  __webpack_require__(/*! loaders.css */ "./node_modules/loaders.css/loaders.css");
-  __webpack_require__(/*! ../css/base.css */ "./node_modules/react-spinkit/css/base.css");
-  __webpack_require__(/*! ../css/loaders-css.css */ "./node_modules/react-spinkit/css/loaders-css.css");
-  __webpack_require__(/*! ../css/fade-in.css */ "./node_modules/react-spinkit/css/fade-in.css");
-  __webpack_require__(/*! ../css/chasing-dots.css */ "./node_modules/react-spinkit/css/chasing-dots.css");
-  __webpack_require__(/*! ../css/circle.css */ "./node_modules/react-spinkit/css/circle.css");
-  __webpack_require__(/*! ../css/cube-grid.css */ "./node_modules/react-spinkit/css/cube-grid.css");
-  __webpack_require__(/*! ../css/double-bounce.css */ "./node_modules/react-spinkit/css/double-bounce.css");
-  __webpack_require__(/*! ../css/folding-cube.css */ "./node_modules/react-spinkit/css/folding-cube.css");
-  __webpack_require__(/*! ../css/pulse.css */ "./node_modules/react-spinkit/css/pulse.css");
-  __webpack_require__(/*! ../css/rotating-plane.css */ "./node_modules/react-spinkit/css/rotating-plane.css");
-  __webpack_require__(/*! ../css/three-bounce.css */ "./node_modules/react-spinkit/css/three-bounce.css");
-  __webpack_require__(/*! ../css/wandering-cubes.css */ "./node_modules/react-spinkit/css/wandering-cubes.css");
-  __webpack_require__(/*! ../css/wave.css */ "./node_modules/react-spinkit/css/wave.css");
-  __webpack_require__(/*! ../css/wordpress.css */ "./node_modules/react-spinkit/css/wordpress.css");
-  /* eslint-enable global-require */
-}
-
-var noFadeInWarning = "Deprecation Warning (react-spinkit): noFadeIn prop should be replaced with fadeIn='none'";
-
-var Spinner = function (_React$Component) {
-  _inherits(Spinner, _React$Component);
-
-  function Spinner(props) {
-    _classCallCheck(this, Spinner);
-
-    if (props.noFadeIn) {
-      console.warn(noFadeInWarning); // eslint-disable-line no-console
-    }
-
-    var _this = _possibleConstructorReturn(this, (Spinner.__proto__ || Object.getPrototypeOf(Spinner)).call(this, props));
-
-    _this.displayName = 'SpinKit';
-    return _this;
-  }
-
-  _createClass(Spinner, [{
-    key: 'render',
-    value: function render() {
-      var _cx;
-
-      var spinnerInfo = _spinners.allSpinners[this.props.name] || _spinners.allSpinners['three-bounce'];
-      var classes = (0, _classnames2.default)((_cx = {
-        'sk-fade-in': this.props.fadeIn === 'full' && !this.props.noFadeIn,
-        'sk-fade-in-half-second': this.props.fadeIn === 'half' && !this.props.noFadeIn,
-        'sk-fade-in-quarter-second': this.props.fadeIn === 'quarter' && !this.props.noFadeIn,
-        'sk-spinner': !this.props.overrideSpinnerClassName
-      }, _defineProperty(_cx, this.props.overrideSpinnerClassName, !!this.props.overrideSpinnerClassName), _defineProperty(_cx, this.props.className, !!this.props.className), _defineProperty(_cx, spinnerInfo.className || this.props.name, true), _cx));
-
-      var props = (0, _objectAssign2.default)({}, this.props);
-      delete props.name;
-      delete props.fadeIn;
-      delete props.noFadeIn;
-      delete props.overrideSpinnerClassName;
-      delete props.className;
-
-      if (this.props.color) {
-        props.style = props.style ? _extends({}, props.style, { color: this.props.color }) : { color: this.props.color };
-      }
-
-      return _react2.default.createElement(
-        'div',
-        _extends({}, props, { className: classes }),
-        [].concat(_toConsumableArray(Array(spinnerInfo.divCount))).map(function (_, idx) {
-          return _react2.default.createElement('div', { key: idx });
-        })
-      );
-    }
-  }]);
-
-  return Spinner;
-}(_react2.default.Component);
-
-Spinner.propTypes = {
-  name: _propTypes2.default.string.isRequired,
-  noFadeIn: _propTypes2.default.bool,
-  fadeIn: _propTypes2.default.oneOf(['full', 'half', 'quarter', 'none']),
-  overrideSpinnerClassName: _propTypes2.default.string,
-  className: _propTypes2.default.string,
-  color: _propTypes2.default.string
-};
-
-Spinner.defaultProps = {
-  name: 'three-bounce',
-  noFadeIn: false,
-  fadeIn: 'full',
-  overrideSpinnerClassName: ''
-};
-
-module.exports = Spinner;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
-
-/***/ }),
-
-/***/ "./node_modules/react-spinkit/dist/spinners.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/react-spinkit/dist/spinners.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var spinkitSpinners = {
-  circle: { className: 'sk-circle', divCount: 12 },
-  'cube-grid': { className: 'sk-cube-grid', divCount: 9 },
-  wave: { className: 'sk-wave', divCount: 5 },
-  'folding-cube': { className: 'sk-folding-cube', divCount: 4 },
-  'three-bounce': { className: 'sk-three-bounce', divCount: 3 },
-  'double-bounce': { className: 'sk-double-bounce', divCount: 2 },
-  'wandering-cubes': { className: 'sk-wandering-cubes', divCount: 2 },
-  'chasing-dots': { className: 'sk-chasing-dots', divCount: 2 },
-  'rotating-plane': { className: 'sk-rotating-plane', divCount: 1 },
-  pulse: { className: 'sk-pulse', divCount: 1 },
-  wordpress: { className: 'sk-wordpress', divCount: 1 }
-};
-
-var loadersCssSpinners = {
-  'ball-grid-beat': { divCount: 9 },
-  'ball-grid-pulse': { divCount: 9 },
-  'line-spin-fade-loader': { divCount: 8 },
-  'ball-spin-fade-loader': { divCount: 8 },
-  'ball-pulse-rise': { divCount: 5 },
-  'line-scale': { divCount: 5 },
-  'line-scale-pulse-out': { divCount: 5 },
-  'line-scale-pulse-out-rapid': { divCount: 5 },
-  pacman: { divCount: 5 },
-  'line-scale-party': { divCount: 4 },
-  'ball-triangle-path': { divCount: 3 },
-  'ball-scale-multiple': { divCount: 3 },
-  'ball-scale-ripple-multiple': { divCount: 3 },
-  'ball-pulse-sync': { divCount: 3 },
-  'ball-beat': { divCount: 3 },
-  'ball-zig-zag': { divCount: 2 },
-  'ball-zig-zag-deflect': { divCount: 2 },
-  'ball-clip-rotate-pulse': { divCount: 2 },
-  'ball-clip-rotate-multiple': { divCount: 2 },
-  'ball-clip-rotate': { divCount: 1 },
-  'ball-scale-ripple': { divCount: 1 },
-  'triangle-skew-spin': { divCount: 1 }
-};
-
-module.exports = {
-  spinkitSpinners: spinkitSpinners,
-  loadersCssSpinners: loadersCssSpinners,
-  allSpinners: _extends({}, spinkitSpinners, loadersCssSpinners)
-};
-
-/***/ }),
-
 /***/ "./node_modules/react-syntax-highlighter/dist/cjs/styles/hljs/a11y-dark.js":
 /*!*********************************************************************************!*\
   !*** ./node_modules/react-syntax-highlighter/dist/cjs/styles/hljs/a11y-dark.js ***!
@@ -82563,6 +82297,18 @@ var Post = function Post(_ref) {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 25
+    },
+    __self: this
+  }), __jsx(_components_Article_Comments__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    idArticle: _id,
+    comment: dataComment,
+    dataAuth: {},
+    isLoadingAuth: true,
+    createCommentRequest: null,
+    loginByFacebookRequest: null,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
     },
     __self: this
   }));

@@ -24,14 +24,15 @@ const Post = ({ dataPost: { title, content, createdAt, _id, category}, dataComme
 
       <Content content={content} />
 
-      {/*<Comments*/}
-      {/*  idArticle={_id}*/}
-      {/*  comment={dataComment}*/}
-      {/*  dataAuth={props.dataAuth}*/}
-      {/*  isLoadingAuth={props.isLoadingAuth}*/}
-      {/*  createCommentRequest={props.createCommentRequest}*/}
-      {/*  loginByFacebookRequest={props.loginByFacebookRequest}*/}
-      {/*/>*/}
+      <Comments
+        idArticle={_id}
+        comment={dataComment}
+        dataAuth={{}}
+        isLoadingAuth={true}
+        createCommentRequest={null}
+        loginByFacebookRequest={null}
+      />
+
     </Layout>
   );
 };
