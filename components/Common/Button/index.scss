@@ -1,0 +1,36 @@
+button {
+  width: 100%;
+  max-width: 200px;
+  height: 30px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  &:hover {
+    border-color: #8e202a;
+    background-color: #8e202a;
+  }
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  &:hover {
+    border-color: #0f8c2b;
+    background-color: #0f8c2b;
+  }
+}

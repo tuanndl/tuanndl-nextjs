@@ -1,0 +1,49 @@
+.avt {
+  position: relative; }
+  .avt img {
+    border-radius: 50%;
+    width: 100%; }
+  .avt .vip-avatar {
+    position: absolute;
+    top: -5px;
+    left: -2px; }
+  .avt .stt {
+    width: 10px;
+    height: 10px;
+    background-color: #b8b8b8;
+    border: solid 5px #e9ebee;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    padding: 5px; }
+  .avt .stt-ready {
+    background-color: #87cb16; }
+  .avt .stt-busy {
+    background-color: #ff9948; }
+  .avt .stt-stop {
+    background-color: #f0564a; }
+  .avt .stt-offline {
+    background-color: #9298a1; }
+
+.avt-xs {
+  width: 25px;
+  height: 25px; }
+
+.avt-sm {
+  width: 40px;
+  height: 40px; }
+
+.avt-md {
+  width: 50px;
+  height: 50px; }
+
+.avt-lg {
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid #e6eaee; }
+  .avt-lg img {
+    border-radius: 4px; }

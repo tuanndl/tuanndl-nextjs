@@ -1,0 +1,82 @@
+@import "../../../assets/sass/settings.module";
+
+.avt {
+  position: relative;
+  img {
+    border-radius: 50%;
+    width: 100%;
+    //&:not(.vip-avatar) {
+    //  border: 1px solid;
+    //}
+  }
+  .vip-avatar {
+    position: absolute;
+    top: -5px;
+    left: -2px;
+  }
+  .stt {
+    width: 10px;
+    height: 10px;
+    background-color: #b8b8b8;
+    border: solid 5px #e9ebee;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    padding: 5px;
+  }
+  .stt-ready {
+    background-color: $ready-color;
+  }
+  .stt-busy {
+    background-color: $orange-color;
+  }
+  .stt-stop {
+    background-color: $main-color;
+  }
+  .stt-offline {
+    background-color: $grey-color;
+  }
+}
+
+.avt-xs {
+  width: 25px;
+  height: 25px;
+}
+
+.avt-sm {
+  width: 40px;
+  height: 40px;
+}
+
+.avt-md {
+  width: 50px;
+  height: 50px;
+}
+
+.avt-lg {
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  img {
+    border-radius: 4px;
+  }
+}
+
+.avt-kol {
+  width: 100px;
+  height: 100px;
+}
+
+.avt-menu {
+  width: 95px;
+  height: 95px;
+  img {
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -82,17 +82,4 @@ export default class CommonHelper {
     return number.toString();
   }
 
-  static cutContent(content) {
-    const DEFAULT_LENGTH_CONTENT = 100;
-    let result = content;
-    if (content && content.length > DEFAULT_LENGTH_CONTENT) {
-      const indexCut = content.indexOf(' ', DEFAULT_LENGTH_CONTENT);
-      if (indexCut === -1) {
-        return result;
-      }
-      result = content.substring(0, indexCut);
-    }
-    return result;
-  };
-
 };

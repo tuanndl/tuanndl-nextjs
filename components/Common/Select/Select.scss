@@ -1,0 +1,45 @@
+.select__main {
+  font-family: SegoeUI-SemiBold;
+  padding: 5px 0 20px;
+  height: auto;
+  width: 100%;
+  min-height: 90px;
+  font-size: 14px;
+  select {
+    height: 44px;
+    width: 100%;
+    padding: 0 10px;
+    border: none;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+  .select__main--label {
+    font-size: 1.1rem;
+  }
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+
+.err_message {
+  display: block;
+  padding-top: 5px;
+  font-size: 13px;
+  color: #f74444;
+  font-style: italic;
+  font-family: sans-serif;
+}
+
+@media (max-width: 479px) {
+  .main {
+      padding: 5px 0 10px;
+      min-height: 80px;
+  }
+}

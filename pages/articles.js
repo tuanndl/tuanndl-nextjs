@@ -1,10 +1,10 @@
 import { CommonHelper } from '../utils';
 import Link from 'next/link';
 
-const Article = ({ title, createdAt, category }) => {
+const Article = ({ title, createdAt, category, link }) => {
   return (
     <div className='Article__item' >
-      <Link href={'article'} ><p className='Article__item--title' aria-label='open article' >{title}</p></Link>
+      <Link href="/post/[id]" as={`/post/${link}`}><p className='Article__item--title' aria-label='open article' >{title}</p></Link>
       <span className='Article__item--time'>{CommonHelper.dateString(createdAt)}</span>
       <span className='Article__item--tag'>{category && category.name}</span>
     </div>

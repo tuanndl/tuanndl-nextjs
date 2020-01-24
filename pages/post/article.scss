@@ -1,0 +1,57 @@
+@import '../../asset/sass/setting';
+
+.container__main {
+  .container__main--title {
+    font-size: 2.5rem;
+    color: $title-color;
+  }
+
+  p {
+    text-align: justify;
+    font-size: 17px;
+    line-height: 180%;
+    word-wrap: break-word;
+  }
+  ul {
+    li {
+      font-size: 16px;
+      list-style-type: circle;
+      line-height: 180%;
+    }
+  }
+  pre {
+    font-size: 16px;
+    code {
+      line-height: 150%;
+    }
+  }
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  table tr:nth-child(even){background-color: #f2f2f2;}
+
+  table tr:hover {background-color: #ddd;}
+
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+}

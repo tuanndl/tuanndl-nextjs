@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -101,6 +101,62 @@ module.exports =
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ "./components/layout/index.js":
+/*!************************************!*\
+  !*** ./components/layout/index.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fonts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../fonts */ "./fonts/index.js");
+/* harmony import */ var _pages_sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/sidebar */ "./pages/sidebar.js");
+/* harmony import */ var _asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../asset/sass/app.scss */ "./asset/sass/app.scss");
+/* harmony import */ var _asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/components/layout/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const Index = ({
+  dataArticles,
+  children
+}) => {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    Object(_fonts__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  }, []);
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx(_pages_sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }), __jsx("div", {
+    className: "container__main",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, children));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -1969,7 +2025,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Article = ({
   title,
   createdAt,
-  category
+  category,
+  link
 }) => {
   return __jsx("div", {
     className: "Article__item",
@@ -1979,7 +2036,8 @@ const Article = ({
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: 'article',
+    href: "/post/[id]",
+    as: `/post/${link}`,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
@@ -2045,13 +2103,10 @@ const Articles = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar */ "./pages/sidebar.js");
-/* harmony import */ var _articles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./articles */ "./pages/articles.js");
-/* harmony import */ var _fonts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../fonts */ "./fonts/index.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../asset/sass/app.scss */ "./asset/sass/app.scss");
-/* harmony import */ var _asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_asset_sass_app_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _articles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./articles */ "./pages/articles.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/layout */ "./components/layout/index.js");
 var _jsxFileName = "/Users/macbook/Git/tuanndl-nextjs/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2059,46 +2114,27 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-
-
 const Index = ({
   dataArticles
 }) => {
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    Object(_fonts__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  });
-  return __jsx("div", {
+  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 7
     },
     __self: undefined
-  }, __jsx(_sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "container__main",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: undefined
-  }, __jsx(_articles__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_articles__WEBPACK_IMPORTED_MODULE_4__["default"], {
     dataArticles: dataArticles,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 8
     },
     __self: undefined
-  })));
+  }));
 };
 
 Index.getInitialProps = async function () {
-  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default()('https://gateway.tuanndl.com/api/v1/article?limit=20&page=1');
+  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default()('https://gateway.tuanndl.com/api/v1/article?limit=20&page=1');
   const data = await res.json();
   return {
     dataArticles: data.result.data
@@ -2315,23 +2351,6 @@ class CommonHelper {
     return number.toString();
   }
 
-  static cutContent(content) {
-    const DEFAULT_LENGTH_CONTENT = 100;
-    let result = content;
-
-    if (content && content.length > DEFAULT_LENGTH_CONTENT) {
-      const indexCut = content.indexOf(' ', DEFAULT_LENGTH_CONTENT);
-
-      if (indexCut === -1) {
-        return result;
-      }
-
-      result = content.substring(0, indexCut);
-    }
-
-    return result;
-  }
-
 }
 ;
 
@@ -2354,7 +2373,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

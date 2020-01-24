@@ -1,0 +1,32 @@
+@import "../../../asset/sass/setting";
+
+ul {
+  list-style: none;
+  .comment__item--li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    .comment__item--avatar {
+      img {
+        margin-top: 0.5em;
+        border-radius: 4px;
+        margin-right: 0.5em;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .comment__item--content {
+      line-height: 180%;
+      white-space: normal;
+      word-wrap: break-word;
+      width: 100%;
+      .comment__item--name {
+        color: $black-color;
+        font-weight: bold;
+      }
+      .comment__item--time {
+        color: $color-time;
+      }
+    }
+  }
+}

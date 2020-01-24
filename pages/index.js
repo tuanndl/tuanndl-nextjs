@@ -1,26 +1,14 @@
-import { useEffect } from 'react';
-import Sidebar from './sidebar';
-import Articles from './articles';
-import Fonts from '../fonts';
 import fetch from 'isomorphic-unfetch';
-
-import '../asset/sass/app.scss';
+import Articles from './articles';
+import Layout from '../components/layout';
 
 const Index = ({ dataArticles }) => {
-
-  useEffect(() => {
-    Fonts();
-  });
-
   return(
-    <div>
-      <Sidebar />
-      <div className='container__main' >
-        <Articles
-          dataArticles={dataArticles}
-        />
-      </div>
-    </div>
+    <Layout>
+      <Articles
+        dataArticles={dataArticles}
+      />
+    </Layout>
   );
 };
 

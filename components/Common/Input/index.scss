@@ -1,0 +1,49 @@
+.input__container {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 0 10px;
+    height: auto;
+    width: 100%;
+    min-height: 90px;
+    input {
+        height: 44px;
+        min-width: 100%;
+        width: auto;
+        border: none;
+        padding-left: 10px;
+        font-size: 14px;
+        border-radius: 6px;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    p {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.label {
+    font-size: 14px !important;
+    text-transform: none !important;
+    font-weight: bold !important;
+    i {
+        color: teal;
+    }
+    a, a:focus {
+        color: blue;
+    }
+}
+
+.err_message {
+    display: block;
+    padding-top: 5px;
+    font-size: 13px;
+    color: #f74444;
+    font-style: italic;
+    font-family: sans-serif;
+}
+
+@media (max-width: 479px) {
+    .main {
+        padding: 5px 0 10px;
+        min-height: 80px;
+    }
+}
