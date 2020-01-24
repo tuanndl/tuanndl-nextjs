@@ -1,0 +1,183 @@
+{
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!pages/style.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!pages/post/article.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!asset/sass/app.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/Article/FacebookLogin/index.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/Article/Comment/index.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/Article/CreateComment/index.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/Common/Button/index.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!pages/style.scss 0": 0,
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!asset/sass/app.scss 0": 1,
+      "ignored node_modules/htmlparser2/lib ./WritableStream": 2,
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/Article/Comment/index.scss 0": 3,
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/Common/Button/index.scss 0": 4,
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/Article/CreateComment/index.scss 0": 5,
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!components/Article/FacebookLogin/index.scss 0": 6,
+      "css node_modules/css-loader/index.js??ref--5-1!node_modules/sass-loader/lib/loader.js??ref--5-2!pages/post/article.scss 0": 7
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/runtime/webpack.js": 0,
+      "commons": 1,
+      "framework": 2,
+      "7cf69e3a09869c352a2465f82c42481dfa2392b9": 3,
+      "styles": 4,
+      "static/eIcPne_ksKJfYMkEYMSUn/pages/_app.js": 5,
+      "static/eIcPne_ksKJfYMkEYMSUn/pages/_error.js": 6,
+      "static/eIcPne_ksKJfYMkEYMSUn/pages/articles.js": 7,
+      "static/eIcPne_ksKJfYMkEYMSUn/pages/index.js": 8,
+      "static/eIcPne_ksKJfYMkEYMSUn/pages/post/[id].js": 9,
+      "static/eIcPne_ksKJfYMkEYMSUn/pages/sidebar.js": 10,
+      "static/runtime/main.js": 11,
+      "static/runtime/polyfills.js": 12,
+      "8f058e0ffd2ec7e956a0bb4b5bdf220e0252675c": 13,
+      "static/KOdHDoEgu4h32UP_bzH_u/pages/_app.js": 14,
+      "static/KOdHDoEgu4h32UP_bzH_u/pages/_error.js": 15,
+      "static/KOdHDoEgu4h32UP_bzH_u/pages/articles.js": 16,
+      "static/KOdHDoEgu4h32UP_bzH_u/pages/index.js": 17,
+      "static/KOdHDoEgu4h32UP_bzH_u/pages/post/[id].js": 18,
+      "static/KOdHDoEgu4h32UP_bzH_u/pages/sidebar.js": 19
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      2,
+      4
+    ]
+  }
+}

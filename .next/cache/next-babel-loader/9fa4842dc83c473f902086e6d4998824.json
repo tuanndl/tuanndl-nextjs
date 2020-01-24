@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var client = {\n  client_id: '393774084801224',\n  client_secret: '91aed850dd17a7d6768fe2909a2b9bbf',\n  grant_type: 'client_credentials',\n  scope: 'authentication-service,playerduo-service,upload-service,ewallet-service'\n};","map":null,"metadata":{},"sourceType":"module"}

@@ -12,6 +12,9 @@ const Article = ({ title, createdAt, category, link }) => {
 };
 
 const Articles = ({dataArticles}) => {
+  if (!dataArticles) {
+    return null;
+  }
   return dataArticles.map( item => {
     return <Article
       key={item._id}
